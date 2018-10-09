@@ -24,7 +24,7 @@ public class Deck {
 
 		if (cardsInDeck.size() == 0)
 		{
-			throw new DeckException(this);
+			throw new DeckException(this); 
 		}
 		return cardsInDeck.remove(0);
 
