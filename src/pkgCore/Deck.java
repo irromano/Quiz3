@@ -39,9 +39,39 @@ public class Deck {
 		}
 		return (null);
 	}
+	
+	public Card Draw(eRank eRank) {
+		for (Card c : cardsInDeck) {
+			if (c.geteRank() == eRank) {
+				cardsInDeck.remove(c);
+				return (c);
+			}
+		}
+		return (null);
+	}
 
 	public int getiDeckCount()
 	{
 		return cardsInDeck.size();
+	}
+	//returns the count of cards in the deck which have the rank of the given parameter
+	public int getRemaining(eRank eRank) {
+		int count = 0;
+		for (Card c : cardsInDeck) {
+			if (c.geteRank() == eRank) {
+				count++;
+			}
+		}
+		return count;
+	}
+	//returns the count of cards in the deck which have the suit of the given parameter
+	public int getRemaining(eSuit eSuit) {
+		int count = 0;
+		for (Card c : cardsInDeck) {
+			if (c.geteSuit() == eSuit) {
+				count++;
+			}
+		}
+		return count;
 	}
 }
